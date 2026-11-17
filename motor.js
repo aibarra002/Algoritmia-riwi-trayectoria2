@@ -1,0 +1,69 @@
+// motor.js — El Motor del Barrio
+// Célula: ______   Negocio: ______
+
+const registros =
+ [
+  { "persona": "rosa morales", "tipodevehiculo": "Camioneta", "valor": 20000, "placa": "SUV-202", "fecha_ingreso": "01-11-2026 08:00", "fecha_salida": "01-11-2026 12:00" },
+  { "persona": "paola garcia", "tipodevehiculo": "carro", "valor": 10000, "placa": "OFF-303", "fecha_ingreso": "02-11-2026 10:00", "fecha_salida": "02-11-2026 12:00" },
+  { "persona": "alejandro manyoma", "tipodevehiculo": "carro", "valor": 10000, "placa": "TRK-505", "fecha_ingreso": "03-11-2026 14:00", "fecha_salida": "03-11-2026 16:00" },
+  { "persona": "felipe rojas", "tipodevehiculo": "moto", "valor": 25000, "placa": "QWE-45A", "fecha_ingreso": "04-11-2026 06:00", "fecha_salida": "04-11-2026 18:00" },
+  { "persona": "Carolina ibarra", "tipodevehiculo": "Camioneta", "valor": 50000, "placa": "MNT-707", "fecha_ingreso": "05-11-2026 08:00", "fecha_salida": "05-11-2026 18:00" },
+  { "persona": "valentina ramirez", "tipodevehiculo": "moto", "valor": 5000, "placa": "QWE-45A", "fecha_ingreso": "06-11-2026 09:00", "fecha_salida": "06-11-2026 11:00" },
+  { "persona": "laura ramirez", "tipodevehiculo": "carro", "valor": 30000, "placa": "ADP-808", "fecha_ingreso": "07-11-2026 12:00", "fecha_salida": "07-11-2026 18:00" },
+  { "persona": "sofia lopez", "tipodevehiculo": "camioneta", "valor": 50000, "placa": "HIL-111", "fecha_ingreso": "01-11-2026 07:00", "fecha_salida": "01-11-2026 18:00" },
+  { "persona": "juan miguel lopez", "tipodevehiculo": "moto", "valor": 25000, "placa": "VBN-34G", "fecha_ingreso": "02-11-2026 08:00", "fecha_salida": "02-11-2026 18:00" },
+  { "persona": "santiago moreno", "tipodevehiculo": "moto", "valor": 10000, "placa": "RTY-88B", "fecha_ingreso": "03-11-2026 13:00", "fecha_salida": "03-11-2026 17:00" },
+  { "persona": "johan rivera", "tipodevehiculo": "moto", "valor": 25000, "placa": "JKL-56E", "fecha_ingreso": "04-11-2026 06:00", "fecha_salida": "04-11-2026 18:00" },
+  { "persona": "juan sebastian grisales", "tipodevehiculo": "carro", "valor": 20000, "placa": "4X4-404", "fecha_ingreso": "05-11-2026 15:00", "fecha_salida": "05-11-2026 19:00" },
+  { "persona": "bryan gil", "tipodevehiculo": "moto", "valor": 10000, "placa": "FGH-99D", "fecha_ingreso": "06-11-2026 08:00", "fecha_salida": "06-11-2026 12:00" },
+  { "persona": "lauren taborda", "tipodevehiculo": "moto", "valor": 5000, "placa": "ZXC-78F", "fecha_ingreso": "06-11-2026 14:00", "fecha_salida": "06-11-2026 16:00" },
+  { "persona": "elver romero", "tipodevehiculo": "carro", "valor": 10000, "placa": "TRK-505", "fecha_ingreso": "07-11-2026 09:00", "fecha_salida": "07-11-2026 11:00" },
+  { "persona": "julian guanume", "tipodevehiculo": "moto", "valor": 10000, "placa": "MNT-707", "fecha_ingreso": "01-11-2026 10:00", "fecha_salida": "01-11-2026 14:00" },
+  { "persona": "alejandro gomez", "tipodevehiculo": "carro", "valor": 50000, "placa": "HIL-111", "fecha_ingreso": "02-11-2026 06:00", "fecha_salida": "02-11-2026 18:00" },
+  { "persona": "brayan tangarife", "tipodevehiculo": "moto", "valor": 25000, "placa": "ASD-12C", "fecha_ingreso": "03-11-2026 08:00", "fecha_salida": "03-11-2026 18:00" },
+  { "persona": "diego garcia", "tipodevehiculo": "moto", "valor": 10000, "placa": "JKL-56E", "fecha_ingreso": "04-11-2026 12:00", "fecha_salida": "04-11-2026 16:00" },
+  { "persona": "laura garcia", "tipodevehiculo": "carro", "valor": 10000, "placa": "MTC-124", "fecha_ingreso": "01-11-2026 13:00", "fecha_salida": "01-11-2026 15:00" },
+  { "persona": "helen sanchez", "tipodevehiculo": "moto", "valor": 25000, "placa": "MTC-121", "fecha_ingreso": "01-11-2026 06:00", "fecha_salida": "01-11-2026 18:00" },
+  { "persona": "daicy sanchez", "tipodevehiculo": "carro", "valor": 20000, "placa": "FGH-99D", "fecha_ingreso": "01-11-2026 09:00", "fecha_salida": "01-11-2026 13:00" },
+  { "persona": "miguel hernandez", "tipodevehiculo": "moto", "valor": 2500, "placa": "PRD-222", "fecha_ingreso": "01-11-2026 15:00", "fecha_salida": "01-11-2026 16:00" },
+  { "persona": "angel augusto bernal", "tipodevehiculo": "carro", "valor": 50000, "placa": "FOT-333", "fecha_ingreso": "01-11-2026 06:00", "fecha_salida": "01-11-2026 18:00" },
+  { "persona": "manuel ignacio rodriguez", "tipodevehiculo": "moto", "valor": 5000, "placa": "VQP-35F", "fecha_ingreso": "01-11-2026 10:00", "fecha_salida": "01-11-2026 12:00" }
+];
+
+// ---------- NIVEL 1 · Datos ----------
+function mostrarRegistro(placa, registros) {
+  return registros.filter((registro)=> registro.placa == placa)[0]
+}
+
+function listarTodo(datos) {
+  return datos
+}
+
+// ---------- NIVEL 2 · Reportes ----------
+function totalGeneral(datos) {}
+function promedio(datos) {}
+function registroMayor(datos) {}
+function filtrarPorCategoria(datos, categoria) {}
+function totalesPorCategoria(datos) {}
+
+// ---------- NIVEL 3 · Set y Map ----------
+function personasUnicas(datos) {}
+function recurrentesLento(datos) {}
+function recurrentesRapido(datos) {}
+function categoriaEstrella(datos) {}
+function parQueSuma(datos, objetivo) {}
+
+// ---------- NIVEL 4 · Cola y pila ----------
+const colaDeAtencion = [];
+function llegar(persona) {}
+function atender() {}
+
+const historial = [];
+function agregarRegistro(datos, registro) {}
+function deshacer(datos) {}
+
+// ---------- ZONA DE PRUEBAS ----------
+
+console.log(mostrarRegistro("ASD-12C", registros))
+console.log(listarTodo(registros))
+  
