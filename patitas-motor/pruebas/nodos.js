@@ -1,4 +1,4 @@
-const nodo= require ("../src/nodo")
+const nodo= require("../src/nodo")
 
 const nodo1=new nodo({
     fecha:"02/02/26",
